@@ -14,7 +14,7 @@ git clone https://github.com/wartelski/recipekeeper.git
 
 npm install
 
-npm run start
+npm start
 ```
 
 ## Tech Stack
@@ -25,8 +25,44 @@ npm run start
 - Used modern, up-to-date JavaScript (ES6+)
 - Used localStorage to store the data
 
-## Flowchart
+> For security reasons API key was removed. Please, generate your own API key: https://forkify-api.herokuapp.com/v2
 
+## API Reference
+
+#### Get all recipes/Create recipe
+
+GET: Returns a list of recipes for a specific search query <br>
+
+POST: Creates a new recipe
+
+```
+  https://forkify-api.herokuapp.com/api/v2/recipes
+```
+
+| Parameter | Required     | Description                |
+| :-------- | :------- | :------------------------- |
+| `search` | Yes | Search text |
+| `key` | Yes (for POST) | The ForkifyAPI key |
+
+#### Get recipe/Delete recipe
+GET: Returns a single recipe<br>
+
+DELETE: Deletes a single recipe associated with provided API key
+
+```
+  https://forkify-api.herokuapp.com/api/v2/recipes/:id
+```
+
+| Parameter | Required     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | Yes | The id of the recipe to be fetched or deleted (part of URL) |
+| `key` | Yes (for DELETE) | The ForkifyAPI key |
+
+
+## Flowchart
+![Flowchart](https://github.com/wartelski/recipekeeper/blob/main/flowchart.png)
+
+## More improvements
 
 ## License
 [MIT](https://github.com/wartelski/recipekeeper/blob/main/LICENSE)
