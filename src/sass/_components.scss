@@ -56,11 +56,11 @@
 }
 
 .btn--inline {
-  color: $color-primary;
+  color: var(--color-primary);
   font-size: 1.3rem;
   font-weight: 600;
   border: none;
-  background-color: $color-grey-light-1;
+  background-color: var(--color-grey-light-1);
   padding: 0.8rem 1.2rem;
   border-radius: 10rem;
   cursor: pointer;
@@ -81,8 +81,8 @@
   }
 
   &:hover {
-    color: $color-grad-2;
-    background-color: $color-grey-light-2;
+    color: var(--color-grad-2);
+    background-color: var(--color-grey-light-2);
   }
 
   &:focus {
@@ -129,7 +129,7 @@
   svg {
     height: 100%;
     width: 100%;
-    fill: $color-primary;
+    fill: var(--color-primary);
     transition: all 0.3s;
   }
 
@@ -138,12 +138,12 @@
   }
 
   &:hover svg {
-    fill: $color-grad-2;
+    fill: var(--color-grad-2);
     transform: translateY(-1px);
   }
 
   &:active svg {
-    fill: $color-grad-2;
+    fill: var(--color-grad-2);
     transform: translateY(0);
   }
 
@@ -155,7 +155,7 @@
 .heading--2 {
   font-size: 2rem;
   font-weight: 700;
-  color: $color-primary;
+  color: var(--color-primary);
   text-transform: uppercase;
   margin-bottom: 2.5rem;
   text-align: center;
@@ -164,7 +164,7 @@
 
 .link:link,
 .link:visited {
-  color: $color-grey-dark-2;
+  color: var(--color-grey-dark-2);
 }
 
 .spinner {
@@ -174,7 +174,7 @@
   svg {
     height: 6rem;
     width: 6rem;
-    fill: $color-primary;
+    fill: var(--color-primary);
     animation: rotate 2s infinite linear;
   }
 }
@@ -200,7 +200,7 @@
   svg {
     height: 3rem;
     width: 3rem;
-    fill: $color-primary;
+    fill: var(--color-primary);
     transform: translateY(-0.3rem);
   }
 

@@ -4,6 +4,7 @@ import { KEY } from './API_KEY.js';
 import { AJAX } from './helpers.js';
 
 export const state = {
+  theme: 'light',
   recipe: {},
   search: {
     query: '',
@@ -115,6 +116,10 @@ export const dltBookmark = function (id) {
 
   persistBookmarks();
 };
+
+export const changeTheme = function(theme){
+  state.theme = theme;
+}
 
 const init = function () {
   const storage = localStorage.getItem('bookmarks');

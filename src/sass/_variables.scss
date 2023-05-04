@@ -1,0 +1,78 @@
+// Variables
+
+:root {
+  --main-color: #fff;
+  --color-primary: #145277;
+  --color-grad-1: #cad0ff;
+  --color-grad-2: #2c7cab;
+  --main-el-bck: #8080ee;
+
+  --color-grey-light-1: #f9f5f3; // Light background
+  --color-grey-light-2: #f2efee; // Light lines
+  --color-grey-light-3: #d3c7c3; // Light text (placeholder)
+  --color-grey-dark-1: #615551; // Normal text
+  --color-grey-dark-2: #918581; // Lighter text
+
+  --color-bck-grey--1: #f9f5f3; // Dark background (surface)
+  --color--bck-grey--2: #f2efee; // Lines / alternative
+
+  --gradient: linear-gradient(
+    90deg,
+    hsla(233, 100%, 90%, 1) 0%,
+    hsla(0, 0%, 89%, 1) 100%
+  );
+}
+
+[data-theme='dark'] {
+  --main-color: #676666;
+  --color-primary: #FA8072;
+
+  --color-grey-light-1: #787676;
+  --color-grey-light-2: #515050;
+  --color-grey-dark-2: #e5e3e3;
+  --color-grey-dark-1: #fff;
+
+  --color--bck-grey--2: #a29f9f;
+
+  --gradient: linear-gradient(
+    90deg,
+    hsla(204, 8%, 13%, 1) 30%,
+    hsla(204, 8%, 15%, 1) 100%
+  );
+}
+
+$bp-largest: 112.5em; //1800px
+$bp-large: 78.15em; // 1250px
+$bp-medium: 61.25em; // 980px
+$bp-small: 37.5em; // 600px
+$bp-smallest: 31.25em; // 500px
+
+// Media Quary
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone-small {
+    @media only screen and (max-width: $bp-smallest) {
+      @content;
+    }
+  }
+  @if $breakpoint == phone {
+    @media only screen and (max-width: $bp-small) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: $bp-medium) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: $bp-large) {
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: $bp-largest) {
+      @content;
+    }
+  }
+}

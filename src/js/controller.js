@@ -6,6 +6,7 @@ import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
 import bookmarksView from './views/bookmarksView.js';
 import addRecipeView from './views/addRecipeView.js';
+import themeView from './views/themeView.js';
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
@@ -121,6 +122,18 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
+const controlTheme = function(actualTheme){
+  let newTheme = 'light';
+
+  if(actualTheme === 'light') newTheme = 'dark';
+  model.changeTheme(newTheme);
+  themeView.setTheme(newTheme);
+}
+
+const initTheme = function(){
+  console.log(model.state.theme);
+}
+
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
@@ -129,6 +142,8 @@ const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
+  initTheme();
+  themeView.addHandlerChangeTheme(controlTheme);
 };
 
 init();

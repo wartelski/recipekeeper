@@ -8,7 +8,11 @@
       href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700"
       rel="stylesheet"
     />
-    <link rel="shortcut icon" href="./src/img/favicon.jpg" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="./src/img/favicon.jpg"
+      type="image/x-icon"
+    />
 
     <link rel="stylesheet" href="src/sass/main.scss" />
     <script defer type="module" src="src/js/controller.js"></script>
@@ -34,6 +38,8 @@
             <span>Search</span>
           </button>
         </form>
+
+       
 
         <nav class="nav">
           <ul class="nav__list">
@@ -67,6 +73,16 @@
             </li>
           </ul>
         </nav>
+
+        <div class="slider">
+          <svg class="slider__icon--day">
+            <use href="src/img/icons.svg#icon-sun"></use>
+          </svg>
+          <div class="slider__circle"></div>
+          <svg class="slider__icon--night">
+            <use href="src/img/icons.svg#icon-moon"></use>
+          </svg>
+        </div>
       </header>
 
       <div class="search-results">
@@ -75,7 +91,12 @@
         <div class="pagination"></div>
 
         <p class="copyright">
-          &copy; Build by <a  class="linkedin-link" href="https://www.linkedin.com/in/anastasia-wartell">Anastasia Wartell</a>, 2023
+          &copy; Build by
+          <a
+            class="linkedin-link"
+            href="https://www.linkedin.com/in/anastasia-wartell"
+            >Anastasia Wartell</a
+          >, 2023
         </p>
       </div>
 
@@ -102,7 +123,13 @@
           <label>Title</label>
           <input value="" required name="title" type="text" />
           <label>URL</label>
-          <input value="" required name="sourceUrl" type="text" placeholder="http://"/>
+          <input
+            value=""
+            required
+            name="sourceUrl"
+            type="text"
+            placeholder="http://"
+          />
           <label>Image URL</label>
           <input value="" required name="image" type="text" />
           <label>Publisher</label>

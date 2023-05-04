@@ -1,6 +1,6 @@
 .header {
   grid-area: head;
-  background-color: $color-grey-light-1;
+  background-color: var(--color-grey-light-1);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,6 +10,15 @@
     height: 4.6rem;
     display: block;
     border-radius: 50%;
+
+    @include respond(tab-port) {
+      margin-left: 2.5rem;
+      margin-right: 1.5rem;
+    }
+    @include respond(phone) {
+      margin-left: 2.5rem;
+      margin-right: 1rem;
+    }
   }
 }
 
@@ -17,10 +26,14 @@
   font-family: inherit;
   font-size: 2rem;
   font-weight: 700;
+
+  @include respond(tab-land) {
+    display: none;
+  }
 }
 
 .search {
-  background-color: #fff;
+  background-color: var(--main-color);
   border-radius: 10rem;
   display: flex;
   align-items: center;
@@ -29,7 +42,7 @@
 
   &:focus-within {
     transform: translateY(-2px);
-    box-shadow: 0 0.7rem 3rem rgba($color-grey-dark-1, 0.08);
+    box-shadow: 0 0.7rem 3rem rgba(var(--color-grey-dark-1), 0.08);
   }
 
   &__field {
@@ -45,14 +58,15 @@
     }
 
     &::placeholder {
-      color: $color-grey-light-3;
+      color: var(--color-grey-light-3);
     }
 
-    @media only screen and (max-width: $bp-medium) {
+    @include respond(tab-port) {
       width: auto;
+      max-width: 14rem;
 
       &::placeholder {
-        color: white;
+        color: #fff;
       }
     }
   }
@@ -60,6 +74,36 @@
   &__btn {
     font-weight: 600;
     font-family: inherit;
+
+    @include respond(tab-land) {
+      span {
+        display: none;
+      }
+      svg {
+        margin-right: 0 !important;
+      }
+      padding: 1.5rem 2.5rem;
+    }
+
+    @include respond(phone) {
+      span {
+        display: initial;
+      }
+      svg {
+        margin-right: 1rem !important;
+      }
+      padding: 1.5rem 3rem;
+    }
+
+    @include respond(phone-small) {
+      span {
+        display: none;
+      }
+      svg {
+        margin-right: 0 !important;
+      }
+      padding: 1.5rem 2.5rem;
+    }
   }
 }
 
@@ -96,7 +140,7 @@
     svg {
       height: 2.4rem;
       width: 2.4rem;
-      fill: $color-primary;
+      fill: var(--color-primary);
       margin-right: 0.7rem;
       transform: translateY(-1px);
     }
@@ -106,7 +150,7 @@
     }
 
     &:hover {
-      background-color: $color-grey-light-2;
+      background-color: var(--color-grey-light-2);
     }
   }
 }
@@ -114,12 +158,11 @@
 .bookmarks {
   padding: 1rem 0;
   position: absolute;
-  // right: 0;
   right: -2.5rem;
   z-index: 10;
   width: 40rem;
-  background-color: #fff;
-  box-shadow: 0 0.8rem 5rem 2rem rgba($color-grey-dark-1, 0.1);
+  background-color: var(--main-color);
+  box-shadow: 0 0.8rem 5rem 2rem rgba(var(--color-grey-dark-1), 0.1);
 
   visibility: hidden;
   opacity: 0;
@@ -139,7 +182,7 @@
     transition: all 0.3s;
 
     &:hover {
-      background-color: $color-grey-light-2;
+      background-color: var(--color-grey-light-2);
     }
   }
 
@@ -147,5 +190,50 @@
   .nav__btn--bookmarks:hover + & {
     visibility: visible;
     opacity: 1;
+  }
+}
+
+.slider {
+  position: relative;
+  width: 8.5rem;
+  margin: 0 1.3rem;
+  height: 4.2rem;
+  border-radius: 2rem;
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  cursor: pointer;
+
+  & > *:not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: var(--color-grey-light-3);
+  }
+
+  &__circle {
+    display: block;
+    content: '';
+    position: absolute;
+    left: 1rem;
+    width: 2.9rem;
+    height: 2.9rem;
+    border-radius: 50%;
+    z-index: 100;
+    background: var(--main-el-bck);
+    transition: all 0.2s;
+  }
+
+  @include respond(phone-small) {
+    background-color: var(--color-grey--1);
+    position: absolute;
+    z-index: 100;
+    top: 11rem;
+    left: 2rem;
   }
 }
