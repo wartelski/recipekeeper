@@ -39,8 +39,6 @@
           </button>
         </form>
 
-       
-
         <nav class="nav">
           <ul class="nav__list">
             <li class="nav__item">
@@ -86,7 +84,16 @@
       </header>
 
       <div class="search-results">
-        <ul class="results"></ul>
+        <ul class="results">
+          <div class="message">
+            <div>
+              <svg>
+                <use href="src/img/icons.svg#icon-smile"></use>
+              </svg>
+            </div>
+            <p>Start by searching for a recipe or an ingredient. Have fun!</p>
+          </div>
+        </ul>
 
         <div class="pagination"></div>
 
@@ -101,16 +108,38 @@
       </div>
 
       <div class="recipe">
-        <div class="message">
-          <div>
-            <svg>
-              <use href="src/img/icons.svg#icon-smile"></use>
-            </svg>
-          </div>
-          <p>Start by searching for a recipe or an ingredient. Have fun!</p>
-        </div>
+        <section class="blocks blocks__features">
+          <h2 class="heading--2 u-margin-top">Hello! How can I help you?</h2>
 
-        <!--  -->
+          <div class="features">
+            <div class="features__feature-box">
+              <div class="features__icon">
+                <svg>
+                  <use href="src/img/icons.svg#icon-search"></use>
+                </svg>
+              </div>
+              <h3 class="heading--3">Search over 1,000,000 recipes</h3>
+              <p class="features__description">
+                Bookmark your favorite recipes and check them out in a special
+                section called "Bookmarks"! Even if you close your browser, your
+                recipes will be safe and waiting for you.
+              </p>
+            </div>
+
+            <div class="features__feature-box">
+              <div class="features__icon">
+                <svg>
+                  <use href="src/img/icons.svg#icon-edit"></use>
+                </svg>
+              </div>
+              <h3 class="heading--3">Add your own recipes</h3>
+              <p class="features__description">
+                We love to see our customers' recipes. Don't hesitate to share
+                with us your own recipe or favorite one from the internet!
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
 
