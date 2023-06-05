@@ -2,7 +2,6 @@
   "name": "forkify-app",
   "version": "1.0.0",
   "description": "Recipe application",
-  "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html --no-minify --dist-dir ./dist"
